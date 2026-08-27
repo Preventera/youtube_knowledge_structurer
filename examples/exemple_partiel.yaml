@@ -1,0 +1,62 @@
+schema_version: '1.0'
+generated_at: '2026-08-27T22:37:17+00:00'
+video:
+  url: https://www.youtube.com/watch?v=EXEMPLE1234
+  video_id: EXEMPLE1234
+  title: null
+  channel: null
+  published_at: null
+  duration: null
+  language: fr
+  transcript_available: true
+  transcript_source: youtube_captions_generated
+  rights_note: Contenu traité à partir de données rendues accessibles par la source. Aucune protection
+    technique n'a été contournée.
+transcript:
+  segment_count: 4
+  language: fr
+  source: youtube_captions_generated
+  is_auto_generated: true
+  hash: 3ab0c4dc8ef23233cf4160e13d72fac7df0a9a1db190e6640d0df5b85495f303
+  duration_seconds: 431.0
+  quality_score: 0.65
+  segments: null
+analysis:
+  short_summary: La vidéo aborde le déploiement d'un projet d'IA, mais la transcription est trop fragmentaire
+    pour conclure.
+  detailed_summary: []
+  topics:
+  - intelligence artificielle
+  key_points:
+  - id: KP-001
+    statement: Un pilote mesurable est évoqué.
+    timestamp: 00:04:18
+    evidence: projet pilote
+    is_inference: true
+    confidence: 0.45
+  recommendations: []
+  risks: []
+  people: []
+  organizations: []
+  technologies: []
+  unanswered_questions:
+  - Le contenu complet de la vidéo n'a pas pu être analysé.
+  claims: []
+  contains_personal_data: false
+  sensitive_domains: []
+  confidence: 0.42
+  human_review_required: true
+quality:
+  extraction_method: youtube_transcript_api
+  analysis_method: langchain_structured_output:single_chunk
+  analysis_model: claude-sonnet-5
+  chunk_count: 1
+  warnings:
+  - 'Sous-titres générés automatiquement : exactitude non garantie, notamment sur les noms propres et
+    les chiffres.'
+  errors: []
+  human_review_required: true
+  review_reason: transcription générée automatiquement; confiance globale faible (0.42)
+  reviewed: false
+  reviewed_by: null
+  reviewed_at: null

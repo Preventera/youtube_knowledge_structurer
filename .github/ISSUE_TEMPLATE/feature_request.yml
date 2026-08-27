@@ -1,0 +1,22 @@
+name: Proposer une évolution
+description: Nouvelle fonctionnalité ou changement de schéma
+labels: ["évolution"]
+body:
+  - type: textarea
+    id: besoin
+    attributes:
+      label: Besoin
+      description: Quel problème concret cette évolution résout-elle ?
+    validations:
+      required: true
+  - type: dropdown
+    id: schema
+    attributes:
+      label: Cette évolution modifie-t-elle le schéma YAML ?
+      options: ["Non", "Oui, ajout de champ optionnel", "Oui, changement de rupture"]
+    validations:
+      required: true
+  - type: textarea
+    id: gouvernance
+    attributes:
+      label: Effet sur la traçabilité, la revue humaine ou les droits d'utilisation

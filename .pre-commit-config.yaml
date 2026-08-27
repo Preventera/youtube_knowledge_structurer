@@ -1,0 +1,28 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: detect-private-key
+      # Empêche de committer un .env ou un fichier volumineux par accident.
+      - id: check-added-large-files
+        args: [--maxkb=512]
+
+  - repo: local
+    hooks:
+      - id: pas-de-dotenv
+        name: Refuser le fichier .env
+        entry: bash -c 'if git diff --cached --name-only | grep -qx ".env"; then echo "Le fichier .env ne doit pas être committé."; exit 1; fi'
+        language: system
+        pass_filenames: false

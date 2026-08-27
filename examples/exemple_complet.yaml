@@ -1,0 +1,107 @@
+schema_version: '1.0'
+generated_at: '2026-08-27T22:37:17+00:00'
+video:
+  url: https://www.youtube.com/watch?v=EXEMPLE1234
+  video_id: EXEMPLE1234
+  title: null
+  channel: null
+  published_at: null
+  duration: null
+  language: fr
+  transcript_available: true
+  transcript_source: youtube_captions_manual
+  rights_note: Sous-titres publics fournis par la plateforme; aucun contournement d'accès.
+transcript:
+  segment_count: 4
+  language: fr
+  source: youtube_captions_manual
+  is_auto_generated: false
+  hash: 3ab0c4dc8ef23233cf4160e13d72fac7df0a9a1db190e6640d0df5b85495f303
+  duration_seconds: 431.0
+  quality_score: 0.9
+  segments: null
+analysis:
+  short_summary: 'La vidéo présente une méthode de déploiement progressif d''un projet d''intelligence
+    artificielle en organisation publique : définir le problème avant la technologie, démarrer par un
+    pilote mesurable, puis établir une gouvernance des données.'
+  detailed_summary:
+  - Définir le problème métier avant de choisir un outil.
+  - Commencer par un projet pilote assorti d'indicateurs.
+  - Prévoir une gouvernance des données dès le départ.
+  topics:
+  - intelligence artificielle
+  - projet pilote
+  - gouvernance des données
+  - transformation numérique
+  key_points:
+  - id: KP-001
+    statement: Le problème métier doit être défini avant le choix de la technologie.
+    timestamp: 00:01:35
+    evidence: définir le problème avant de choisir la technologie
+    is_inference: false
+    confidence: 0.93
+  - id: KP-002
+    statement: Un projet pilote doit avoir des indicateurs de succès définis à l'avance.
+    timestamp: 00:04:18
+    evidence: un projet pilote avec des indicateurs de succès définis à l'avance
+    is_inference: false
+    confidence: 0.95
+  - id: KP-003
+    statement: L'absence de gouvernance des données bloque le passage à l'échelle.
+    timestamp: 00:07:05
+    evidence: sans gouvernance des données, le projet finit par stagner
+    is_inference: false
+    confidence: 0.88
+  recommendations:
+  - text: Définir les indicateurs de succès avant le lancement du pilote.
+    priority: high
+    applicable_to: organisation publique
+    timestamp: 00:04:18
+    is_inference: false
+    confidence: 0.9
+  - text: Établir une gouvernance des données avant le passage à l'échelle.
+    priority: medium
+    applicable_to: null
+    timestamp: 00:07:05
+    is_inference: true
+    confidence: 0.6
+  risks:
+  - description: Un pilote sans indicateurs ne permet pas de décider de la suite.
+    severity: high
+    mitigation: Fixer les critères de succès avant le démarrage.
+    timestamp: 00:04:18
+    confidence: 0.85
+  - description: La transcription automatique peut comporter des erreurs sur les noms propres.
+    severity: medium
+    mitigation: Vérifier les passages critiques avec la vidéo originale.
+    timestamp: null
+    confidence: 0.7
+  people: []
+  organizations: []
+  technologies:
+  - Python
+  - Microsoft 365
+  unanswered_questions:
+  - Quel budget la démarche suppose-t-elle ?
+  claims:
+  - text: Un pilote mesurable réduit le risque d'abandon du projet.
+    timestamp: 00:04:18
+    evidence: commencer par un projet pilote
+    verifiable: true
+    confidence: 0.7
+  contains_personal_data: false
+  sensitive_domains: []
+  confidence: 0.88
+  human_review_required: true
+quality:
+  extraction_method: youtube_transcript_api
+  analysis_method: langchain_structured_output:single_chunk
+  analysis_model: claude-sonnet-5
+  chunk_count: 1
+  warnings: []
+  errors: []
+  human_review_required: true
+  review_reason: revue de contrôle standard avant diffusion
+  reviewed: false
+  reviewed_by: null
+  reviewed_at: null

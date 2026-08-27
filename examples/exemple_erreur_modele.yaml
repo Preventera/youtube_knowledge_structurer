@@ -1,0 +1,62 @@
+schema_version: '1.0'
+generated_at: '2026-08-27T22:37:17+00:00'
+video:
+  url: https://www.youtube.com/watch?v=EXEMPLE1234
+  video_id: EXEMPLE1234
+  title: null
+  channel: null
+  published_at: null
+  duration: null
+  language: null
+  transcript_available: false
+  transcript_source: unavailable
+  rights_note: Contenu traité à partir de données rendues accessibles par la source. Aucune protection
+    technique n'a été contournée.
+transcript:
+  segment_count: 0
+  language: null
+  source: unavailable
+  is_auto_generated: false
+  hash: null
+  duration_seconds: null
+  quality_score: null
+  segments: null
+analysis:
+  short_summary: 'Analyse impossible : aucune transcription exploitable n''a été obtenue. Aucun contenu
+    de la vidéo n''a été résumé.'
+  detailed_summary: []
+  topics: []
+  key_points: []
+  recommendations: []
+  risks:
+  - description: Le fournisseur a retourné une erreur 529 (surcharge)
+    severity: medium
+    mitigation: Fournir une transcription autorisée, ou un fichier audio/vidéo auquel vous avez légalement
+      accès via --media.
+    timestamp: null
+    confidence: 1.0
+  people: []
+  organizations: []
+  technologies: []
+  unanswered_questions:
+  - Quel est le contenu exact de la vidéo ?
+  claims: []
+  contains_personal_data: false
+  sensitive_domains: []
+  confidence: 0.0
+  human_review_required: true
+quality:
+  extraction_method: failed
+  analysis_method: not_executed
+  analysis_model: null
+  chunk_count: 0
+  warnings:
+  - 'Une transcription a été obtenue mais n''a pas pu être analysée : aucune conclusion n''est produite.'
+  errors:
+  - code: model_error
+    message: Le fournisseur a retourné une erreur 529 (surcharge)
+  human_review_required: true
+  review_reason: 'Aucune transcription : document d''état, non exploitable tel quel.'
+  reviewed: false
+  reviewed_by: null
+  reviewed_at: null

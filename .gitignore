@@ -1,0 +1,47 @@
+# Environnements
+.venv/
+venv/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# Secrets — ne jamais versionner
+.env
+.env.*
+!.env.example
+*.key
+
+# Outils
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Sorties du pipeline (les exemples versionnés sont dans examples/)
+*.yaml.tmp
+.*.yaml.*.tmp
+resultat.yaml
+video_structuree.yaml
+schema_document.json
+
+# Médias locaux : jamais dans le dépôt
+*.mp3
+*.mp4
+*.m4a
+*.mkv
+*.wav
+*.webm
+
+# Systèmes
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

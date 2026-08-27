@@ -1,0 +1,39 @@
+name: Signaler un bogue
+description: Comportement inattendu du pipeline
+labels: ["bogue"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Ne collez jamais de clé d'API, ni de transcription contenant des
+        renseignements personnels. Anonymisez avant de publier.
+  - type: input
+    id: version
+    attributes:
+      label: Version de YKS et de Python
+      placeholder: "yks 1.0.0, Python 3.12, Windows 11"
+    validations:
+      required: true
+  - type: input
+    id: exit-code
+    attributes:
+      label: Code de sortie obtenu
+      placeholder: "7"
+  - type: textarea
+    id: commande
+    attributes:
+      label: Commande exécutée
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: attendu
+    attributes:
+      label: Comportement attendu et comportement observé
+    validations:
+      required: true
+  - type: textarea
+    id: quality
+    attributes:
+      label: Bloc `quality` du YAML produit, si un fichier a été généré
+      render: yaml
