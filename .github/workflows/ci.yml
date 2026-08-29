@@ -51,7 +51,12 @@ jobs:
         run: pytest --cov=yks --cov-report=term-missing --cov-report=xml
 
       - name: Vérifier que la CLI démarre
-        run: yks --version && yks --print-schema document > /dev/null
+        # shell bash explicite : sur les runners Windows, le shell par défaut est
+        # PowerShell, où « > /dev/null » écrit dans un dossier inexistant.
+        shell: bash
+        run: |
+          yks --version
+          yks --print-schema document > /dev/null
 
       - name: Téléverser la couverture
         if: matrix.python-version == '3.12' && matrix.os == 'ubuntu-latest'

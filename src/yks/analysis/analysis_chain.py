@@ -65,7 +65,7 @@ class LangChainRunner:
 
     def __init__(self, settings: Settings) -> None:
         self.settings = settings
-        self._structured = None
+        self._structured: Any = None
 
     def _build(self) -> Any:
         if self._structured is not None:
@@ -86,13 +86,18 @@ class LangChainRunner:
                 details=str(exc),
             ) from exc
 
-        llm = ChatAnthropic(
-            model=self.settings.model,
-            temperature=self.settings.temperature,
-            timeout=self.settings.timeout_seconds,
-            max_retries=self.settings.max_retries,
-            api_key=api_key,
-        )
+        # Les paramètres passent par un dictionnaire : ChatAnthropic est un modèle
+        # Pydantic dont plusieurs champs sont déclarés par alias, ce que les stubs de
+        # typage ne reflètent pas. Le splat évite des ignores qui deviendraient faux
+        # à la prochaine version de la bibliothèque.
+        llm_kwargs: dict[str, Any] = {
+            "model": self.settings.model,
+            "temperature": self.settings.temperature,
+            "timeout": self.settings.timeout_seconds,
+            "max_retries": self.settings.max_retries,
+            "api_key": api_key,
+        }
+        llm = ChatAnthropic(**llm_kwargs)
         self._structured = llm.with_structured_output(Analysis)
         return self._structured
 
