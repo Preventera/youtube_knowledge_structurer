@@ -92,11 +92,18 @@ class LangChainRunner:
         # à la prochaine version de la bibliothèque.
         llm_kwargs: dict[str, Any] = {
             "model": self.settings.model,
-            "temperature": self.settings.temperature,
             "timeout": self.settings.timeout_seconds,
             "max_retries": self.settings.max_retries,
             "api_key": api_key,
         }
+        # Les modèles récents rejettent « temperature » avec une erreur 400. On ne
+        # l'envoie donc que s'il est explicitement réglé sur une valeur non nulle.
+        # Le déterminisme reste assuré par with_structured_output, qui contraint la
+        # sortie au schéma Pydantic.
+        temperature = self.settings.temperature
+        if temperature is not None and temperature != 0.0:
+            llm_kwargs["temperature"] = temperature
+
         llm = ChatAnthropic(**llm_kwargs)
         self._structured = llm.with_structured_output(Analysis)
         return self._structured
